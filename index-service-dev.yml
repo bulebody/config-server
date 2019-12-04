@@ -1,0 +1,35 @@
+server:
+  port: 8082
+
+
+spring:
+  application:
+    name: index-service
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8083/eureka/,http://localhost:8084/eureka/
+    registry-fetch-interval-seconds: 30   #每隔30秒抓取一次新的注册信息
+  instance:
+    lease-renewal-interval-in-seconds: 30   #客户端向服务器发送心跳包的频率
+    lease-expiration-duration-in-seconds: 90  #心跳包的超时时间，超过90秒自动将服务剔除
+
+#配置负载均衡的的调用
+product-service:
+  ribbon:
+    #NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+    OkToRetryOnAllOperations: true #是否对所有的操作重试
+    MaxAutoRetriesNextServer: 2    #切换实例的重试次数
+
+#配置熔断
+feign:
+  hystrix:
+    enabled: true
+
+#暴露所有健康监控节点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
