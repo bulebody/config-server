@@ -1,2 +1,2 @@
-configclient:
-  server: http://image-test.com
+image:
+  server: http://image-configclient.com
