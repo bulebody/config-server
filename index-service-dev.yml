@@ -26,3 +26,10 @@ spring:
     virtual-host: /1907
     username: java1907
     password: 123
+
+#配置日志输出级别
+logging: 
+  level: 
+    root: info 
+    org.springframework.web.servlet.DispatcherServlet: DEBUG 
+    org.springframework.cloud.sleuth: DEBUG
