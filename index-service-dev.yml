@@ -1,12 +1,5 @@
 
 
-eureka:
-  client:
-    registry-fetch-interval-seconds: 30   #每隔30秒抓取一次新的注册信息
-  instance:
-    lease-renewal-interval-in-seconds: 30   #客户端向服务器发送心跳包的频率
-    lease-expiration-duration-in-seconds: 90  #心跳包的超时时间，超过90秒自动将服务剔除
-
 #配置负载均衡的的调用
 product-service:
   ribbon:
