@@ -10,7 +10,7 @@ product-service:
 #配置熔断
 feign:
   hystrix:
-    enabled: 
+    enabled: true
 
 #暴露所有健康监控节点
 management:
