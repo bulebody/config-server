@@ -1,15 +1,7 @@
-server:
-  port: 8082
 
-
-spring:
-  application:
-    name: index-service
 
 eureka:
   client:
-    service-url:
-      defaultZone: http://localhost:8083/eureka/,http://localhost:8084/eureka/
     registry-fetch-interval-seconds: 30   #每隔30秒抓取一次新的注册信息
   instance:
     lease-renewal-interval-in-seconds: 30   #客户端向服务器发送心跳包的频率
@@ -33,3 +25,11 @@ management:
     web:
       exposure:
         include: '*'
+        
+#添加RabbitMQ的配置
+spring:
+  rabbitmq:
+    host: 120.27.144.231
+    virtual-host: /1907
+    username: java1907
+    password: 123
